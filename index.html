@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSP Group 4 Project</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    section {
+      padding: 2rem 4vw;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      margin-top: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      color: #0077cc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    footer {
+      background: #222;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .graph {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>IB Group 4 CSP – Interdisciplinary Project</h1>
+    <p>Exploring How School Design Affects Human-Environment Interactions</p>
+  </header>
+
+  <section>
+    <h2>Statement of Inquiry</h2>
+    <p>To what extent does the design of North Atlanta High School contribute to positive interactions between human society and the environment?</p>
+
+    <h2>Interdisciplinary Connection</h2>
+    <p>This project brings together insights from Physics, Biology, and Sports & Exercise Health Science (SEHS). Each discipline conducted an experiment that contributes to a unified understanding of how the physical design of our school environment affects student well-being, behavior, and environmental interaction.</p>
+
+    <h2>Physics</h2>
+    <p><strong>Research Question:</strong> How does the layout and surface type of school hallways affect students' walking speed and acceleration?</p>
+    <p><strong>Variables:</strong> Independent – surface type; Dependent – speed/acceleration; Controlled – distance, time of day, participants</p>
+    <p><strong>Method:</strong> Students walked 10m on tile, carpet, and concrete surfaces. Times were recorded and speeds/accelerations calculated.</p>
+    <table>
+      <thead><tr><th>Surface</th><th>Avg. Time (s)</th><th>Speed (m/s)</th><th>Acceleration (m/s²)</th></tr></thead>
+      <tbody>
+        <tr><td>Tile</td><td>6.1</td><td>1.64</td><td>0.27</td></tr>
+        <tr><td>Carpet</td><td>6.9</td><td>1.45</td><td>0.21</td></tr>
+        <tr><td>Concrete</td><td>5.7</td><td>1.75</td><td>0.31</td></tr>
+      </tbody>
+    </table>
+    <div class="graph">
+      <canvas id="speedChart" width="400" height="200"></canvas>
+    </div>
+    <p><strong>Conclusion:</strong> Surface type influences student speed, which impacts movement flow and energy use in the school environment.</p>
+
+    <h2>Biology</h2>
+    <p><strong>Research Question:</strong> How does noise pollution in different school zones affect students' physiological stress responses?</p>
+    <p><strong>Variables:</strong> Independent – location; Dependent – heart rate; Controlled – same individuals, time of day</p>
+    <p><strong>Method:</strong> Students measured heart rates in quiet (library) and noisy (cafeteria, hallway) areas using fitness trackers. Noise levels were recorded with a decibel meter app.</p>
+    <table>
+      <thead><tr><th>Location</th><th>Noise Level (dB)</th><th>Avg. Heart Rate (bpm)</th></tr></thead>
+      <tbody>
+        <tr><td>Library</td><td>42</td><td>68</td></tr>
+        <tr><td>Hallway</td><td>74</td><td>78</td></tr>
+        <tr><td>Cafeteria</td><td>85</td><td>84</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Conclusion:</strong> Louder environments are associated with higher heart rates, suggesting a stress response linked to school design.</p>
+
+    <h2>Sports & Exercise Health Science (SEHS)</h2>
+    <p><strong>Research Question:</strong> How does air quality in different school areas impact cardiovascular performance during exercise?</p>
+    <p><strong>Variables:</strong> Independent – location; Dependent – post-exercise heart rate; Controlled – same exercise, same participants</p>
+    <p><strong>Method:</strong> Students performed light cardio in the gym, classroom, and outside. Air quality (CO₂/PM2.5) was measured, and heart rate was recorded post-exercise.</p>
+    <table>
+      <thead><tr><th>Location</th><th>CO₂ (ppm)</th><th>Post-Exercise Heart Rate (bpm)</th></tr></thead>
+      <tbody>
+        <tr><td>Gym</td><td>850</td><td>142</td></tr>
+        <tr><td>Classroom</td><td>1100</td><td>152</td></tr>
+        <tr><td>Outside</td><td>430</td><td>138</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Conclusion:</strong> Better air quality correlates with lower heart rates post-exercise, suggesting outdoor areas are more conducive to healthy physical activity.</p>
+
+    <h2>Challenges & Suggestions</h2>
+    <ul>
+      <li>Controlling time of day and hallway traffic was difficult. Next time, block off testing areas.</li>
+      <li>Biology participants had noisy surroundings; suggest using noise-canceling equipment for more accurate readings.</li>
+      <li>Air quality sensors had slight lag; allow time for readings to stabilize in future.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>The design of school environments—including surface materials, acoustic levels, and air quality—clearly influences physical, physiological, and behavioral outcomes in students. Each subject demonstrated how design decisions shape human-environment interactions. This webpage integrates our findings into an accessible, creative digital product aligned with the inquiry.</p>
+  </section>
+
+  <footer>
+    <p>Created by IB Group 4 Team – North Atlanta High School CSP 2024</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('speedChart').getContext('2d');
+    const speedChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Tile', 'Carpet', 'Concrete'],
+        datasets: [{
+          label: 'Speed (m/s)',
+          data: [1.64, 1.45, 1.75],
+          backgroundColor: ['#0077cc', '#00aacc', '#00cc99']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Average Walking Speed by Surface Type' }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
