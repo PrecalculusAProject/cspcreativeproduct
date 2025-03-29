@@ -73,21 +73,21 @@
     <p>This project brings together insights from Physics, Biology, and Sports & Exercise Health Science (SEHS). Each discipline conducted an experiment that contributes to a unified understanding of how the physical design of our school environment affects student well-being, behavior, and environmental interaction.</p>
 
     <h2>Physics</h2>
-    <p><strong>Research Question:</strong> How does the layout and surface type of school hallways affect students' walking speed and acceleration?</p>
-    <p><strong>Variables:</strong> Independent – surface type; Dependent – speed/acceleration; Controlled – distance, time of day, participants</p>
-    <p><strong>Method:</strong> Students walked 10m on tile, carpet, and concrete surfaces. Times were recorded and speeds/accelerations calculated.</p>
+    <p><strong>Research Question:</strong> How does the layout and surface type of school hallways affect students’ walking velocity?</p>
+    <p><strong>Variables:</strong> Independent – surface type; Dependent – velocity (m/s); Controlled – distance (10m), time of day, walking pace, same participant(s)</p>
+    <p><strong>Method:</strong> Students walked 10 meters on tile, carpet, and concrete surfaces. Times were recorded and velocity was calculated using v = d/t.</p>
     <table>
-      <thead><tr><th>Surface</th><th>Avg. Time (s)</th><th>Speed (m/s)</th><th>Acceleration (m/s²)</th></tr></thead>
+      <thead><tr><th>Surface</th><th>Avg. Time (s)</th><th>Velocity (m/s)</th></tr></thead>
       <tbody>
-        <tr><td>Tile</td><td>6.1</td><td>1.64</td><td>0.27</td></tr>
-        <tr><td>Carpet</td><td>6.9</td><td>1.45</td><td>0.21</td></tr>
-        <tr><td>Concrete</td><td>5.7</td><td>1.75</td><td>0.31</td></tr>
+        <tr><td>Tile</td><td>6.1</td><td>1.64</td></tr>
+        <tr><td>Carpet</td><td>6.9</td><td>1.45</td></tr>
+        <tr><td>Concrete</td><td>5.7</td><td>1.75</td></tr>
       </tbody>
     </table>
     <div class="graph">
       <canvas id="speedChart" width="400" height="200"></canvas>
     </div>
-    <p><strong>Conclusion:</strong> Surface type influences student speed, which impacts movement flow and energy use in the school environment.</p>
+    <p><strong>Conclusion:</strong> Students walked slowest on carpet, faster on tile, and fastest on outdoor concrete. This shows that surface material and spatial design can influence how efficiently students move through school environments.</p>
 
     <h2>Biology</h2>
     <p><strong>Research Question:</strong> How does noise pollution in different school zones affect students' physiological stress responses?</p>
@@ -140,7 +140,7 @@
       data: {
         labels: ['Tile', 'Carpet', 'Concrete'],
         datasets: [{
-          label: 'Speed (m/s)',
+          label: 'Velocity (m/s)',
           data: [1.64, 1.45, 1.75],
           backgroundColor: ['#0077cc', '#00aacc', '#00cc99']
         }]
@@ -149,7 +149,7 @@
         responsive: true,
         plugins: {
           legend: { display: false },
-          title: { display: true, text: 'Average Walking Speed by Surface Type' }
+          title: { display: true, text: 'Average Walking Velocity by Surface Type' }
         },
         scales: {
           y: { beginAtZero: true }
