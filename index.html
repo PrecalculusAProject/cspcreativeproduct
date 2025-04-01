@@ -74,8 +74,6 @@
 
     <h2>Physics</h2>
     <p><strong>Research Question:</strong> How does the layout and surface type of school hallways affect students’ walking velocity?</p>
-    <p><strong>Variables:</strong> Independent – surface type; Dependent – velocity (m/s); Controlled – distance (10m), time of day, walking pace, same participant(s)</p>
-    <p><strong>Method:</strong> Students walked 10 meters on tile, carpet, and concrete surfaces. Times were recorded and velocity was calculated using v = d/t.</p>
     <table>
       <thead><tr><th>Surface</th><th>Avg. Time (s)</th><th>Velocity (m/s)</th></tr></thead>
       <tbody>
@@ -87,26 +85,24 @@
     <div class="graph">
       <canvas id="speedChart" width="400" height="200"></canvas>
     </div>
-    <p><strong>Conclusion:</strong> Students walked slowest on carpet, faster on tile, and fastest on outdoor concrete. This shows that surface material and spatial design can influence how efficiently students move through school environments.</p>
 
     <h2>Biology</h2>
-    <p><strong>Research Question:</strong> How does noise pollution in different school zones affect students' physiological stress responses?</p>
-    <p><strong>Variables:</strong> Independent – location; Dependent – heart rate; Controlled – same individuals, time of day</p>
-    <p><strong>Method:</strong> Students measured heart rates in quiet (library) and noisy (cafeteria, hallway) areas using fitness trackers. Noise levels were recorded with a decibel meter app.</p>
+    <p><strong>Research Question:</strong> To what extent does the architectural design of the high-rise school building influence student stress levels and physiological responses to environmental stimuli?</p>
     <table>
-      <thead><tr><th>Location</th><th>Noise Level (dB)</th><th>Avg. Heart Rate (bpm)</th></tr></thead>
+      <thead><tr><th>School Environment</th><th>Average Oxygen Level (%)</th><th>Average Pulse BPM</th></tr></thead>
       <tbody>
-        <tr><td>Library</td><td>42</td><td>68</td></tr>
-        <tr><td>Hallway</td><td>74</td><td>78</td></tr>
-        <tr><td>Cafeteria</td><td>85</td><td>84</td></tr>
+        <tr><td>Higher Floor (Well Lit)</td><td>97%</td><td>95 BPM</td></tr>
+        <tr><td>Lower Floor (Dimly Lit)</td><td>95%</td><td>86 BPM</td></tr>
+        <tr><td>Higher Floor (Dimly Lit)</td><td>94%</td><td>106 BPM</td></tr>
+        <tr><td>Lower Floor (Well Lit)</td><td>97%</td><td>87 BPM</td></tr>
       </tbody>
     </table>
-    <p><strong>Conclusion:</strong> Louder environments are associated with higher heart rates, suggesting a stress response linked to school design.</p>
+    <div class="graph">
+      <canvas id="biologyChart" width="400" height="200"></canvas>
+    </div>
 
     <h2>Sports & Exercise Health Science (SEHS)</h2>
     <p><strong>Research Question:</strong> How does air quality in different school areas impact cardiovascular performance during exercise?</p>
-    <p><strong>Variables:</strong> Independent – location; Dependent – post-exercise heart rate; Controlled – same exercise, same participants</p>
-    <p><strong>Method:</strong> Students performed light cardio in the gym, classroom, and outside. Air quality (CO₂/PM2.5) was measured, and heart rate was recorded post-exercise.</p>
     <table>
       <thead><tr><th>Location</th><th>CO₂ (ppm)</th><th>Post-Exercise Heart Rate (bpm)</th></tr></thead>
       <tbody>
@@ -116,16 +112,6 @@
       </tbody>
     </table>
     <p><strong>Conclusion:</strong> Better air quality correlates with lower heart rates post-exercise, suggesting outdoor areas are more conducive to healthy physical activity.</p>
-
-    <h2>Challenges & Suggestions</h2>
-    <ul>
-      <li>Controlling time of day and hallway traffic was difficult. Next time, block off testing areas.</li>
-      <li>Biology participants had noisy surroundings; suggest using noise-canceling equipment for more accurate readings.</li>
-      <li>Air quality sensors had slight lag; allow time for readings to stabilize in future.</li>
-    </ul>
-
-    <h2>Conclusion</h2>
-    <p>The design of school environments—including surface materials, acoustic levels, and air quality—clearly influences physical, physiological, and behavioral outcomes in students. Each subject demonstrated how design decisions shape human-environment interactions. This webpage integrates our findings into an accessible, creative digital product aligned with the inquiry.</p>
   </section>
 
   <footer>
@@ -134,8 +120,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    const ctx = document.getElementById('speedChart').getContext('2d');
-    const speedChart = new Chart(ctx, {
+    const ctxSpeed = document.getElementById('speedChart').getContext('2d');
+    new Chart(ctxSpeed, {
       type: 'bar',
       data: {
         labels: ['Tile', 'Carpet', 'Concrete'],
@@ -145,16 +131,21 @@
           backgroundColor: ['#0077cc', '#00aacc', '#00cc99']
         }]
       },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          title: { display: true, text: 'Average Walking Velocity by Surface Type' }
-        },
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
+      options: { responsive: true, scales: { y: { beginAtZero: true } } }
+    });
+
+    const ctxBio = document.getElementById('biologyChart').getContext('2d');
+    new Chart(ctxBio, {
+      type: 'bar',
+      data: {
+        labels: ['Higher Floor (Well Lit)', 'Lower Floor (Dimly Lit)', 'Higher Floor (Dimly Lit)', 'Lower Floor (Well Lit)'],
+        datasets: [{
+          label: 'Average Pulse BPM',
+          data: [95, 86, 106, 87],
+          backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0']
+        }]
+      },
+      options: { responsive: true, scales: { y: { beginAtZero: true } } }
     });
   </script>
 </body>
